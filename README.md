@@ -63,3 +63,8 @@ It may break:
 - some regional TV features
 
 Use at your own risk. Keep a backup of your AdGuard Home config and your previous rules.
+
+Notes
+This list was created by watching AdGuard Home Query Log from a Hisense / VIDAA TV after boot, cache cleanup, and VIDAA Home navigation.
+
+It is intentionally aggressive for a setup where the TV is used mainly for selected apps, not for VIDAA Free, HbbTV, Red Button, or the native VIDAA content portal.
