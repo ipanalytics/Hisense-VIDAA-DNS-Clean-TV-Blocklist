@@ -30,3 +30,5 @@ recommend-ui-eu.vidaahub.com
 sttc-az-recommend-ui.vidaahub.com
 ter-jrnl-eu.vidaahub.com
 tvmodules-vidaa.vidaahub.com
+file-ul.vidaahub.com
+member-ui-eu.vidaahub.com
