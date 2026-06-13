@@ -30,4 +30,3 @@
 ||sttc-az-recommend-ui.vidaahub.com^
 ||ter-jrnl-eu.vidaahub.com^
 ||tvmodules-vidaa.vidaahub.com^
-||vidaa-base-auth-eu.vidaahub.com^
