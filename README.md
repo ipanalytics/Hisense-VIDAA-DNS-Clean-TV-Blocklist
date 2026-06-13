@@ -68,6 +68,4 @@ This list was created by watching AdGuard Home Query Log from a Hisense / VIDAA 
 
 It is intentionally aggressive for a setup where the TV is used mainly for selected apps, not for VIDAA Free, HbbTV, Red Button, or the native VIDAA content portal.
 
-ota-tv.vidaahub.com
-upgrade-plc-tv-eu.vidaahub.com
-domain.vidaahub.com
+
