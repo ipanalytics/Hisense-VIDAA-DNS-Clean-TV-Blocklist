@@ -9,7 +9,6 @@ This list is made for a TV used mostly as a clean Smart TV screen for apps like 
 - Region: Europe / Germany
 - TV brand: Hisense
 - TV OS: VIDAA
-- TV model: `YOUR_MODEL_HERE`
 - DNS blocker: AdGuard Home
 - Device DNS: TV points to a local Raspberry Pi running AdGuard Home
 - Main goal: clean VIDAA home screen and reduce telemetry/recommendation traffic
@@ -68,3 +67,7 @@ Notes
 This list was created by watching AdGuard Home Query Log from a Hisense / VIDAA TV after boot, cache cleanup, and VIDAA Home navigation.
 
 It is intentionally aggressive for a setup where the TV is used mainly for selected apps, not for VIDAA Free, HbbTV, Red Button, or the native VIDAA content portal.
+
+ota-tv.vidaahub.com
+upgrade-plc-tv-eu.vidaahub.com
+domain.vidaahub.com
