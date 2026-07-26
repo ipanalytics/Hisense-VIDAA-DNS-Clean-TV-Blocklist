@@ -1,6 +1,6 @@
-// Hisense / VIDAA Active Domain Reference
-// Plain domain list. No AdGuard syntax.
-// Contains only domains that are active in the extended annotated blocklist.
+// Hisense / VIDAA Domain Reference — Full Group Structure
+// Active domains are plain lines.
+// Optional or disabled domains are preserved as commented lines: // domain.example
 
 // ============================================================================
 // GROUP 1 — ADVERTISING / IMPRESSIONS / PROMOTIONAL ASSETS
@@ -51,6 +51,12 @@ api-shoppingguider-dcdn.hismarttv.com
 shop-launcher.hismarttv.com
 // shop-launcher: inferred commercial or shopping section used by the launcher.
 
+abtest-tv.vidaahub.com
+// abtest-tv: A/B testing and remote feature-experiment endpoint for TV firmware and UI variants.
+
+bo.ads-privacy.vidaahub.com
+// bo.ads-privacy: advertising privacy, consent, and advertising-policy backend.
+
 // ============================================================================
 // GROUP 2 — RECOMMENDATIONS / HOME FEEDS / CONTENT DISCOVERY
 // ============================================================================
@@ -82,6 +88,9 @@ api-recommendation-em.hismarttv.com
 
 launcher-recommend.hismarttv.com
 // launcher-recommend: inferred launcher recommendation feed.
+
+detail-ui-eu.vidaahub.com
+// detail-ui-eu: European UI metadata and detailed interface-content endpoint.
 
 // ============================================================================
 // GROUP 3 — TELEMETRY / LOGGING / ANALYTICS / DEVICE DETECTION
@@ -121,6 +130,9 @@ api.us.hismarttv.com
 
 api.euro.hismarttv.com
 // api.euro: legacy European Hisense API endpoint retained from the original tested list.
+
+api.eu.hismarttv.com
+// api.eu: legacy European Hisense / VIDAA platform API endpoint.
 
 metrics.hismarttv.com
 // metrics: inferred usage and performance metrics endpoint.
@@ -252,3 +264,175 @@ api-launcher-eu.hismarttv.com
 
 auth-launcher-eu.hismarttv.com
 // auth-launcher-eu: European launcher authentication endpoint.
+
+// ============================================================================
+// GROUP 8 — OTA / FIRMWARE / SYSTEM UPDATE ENDPOINTS
+// ============================================================================
+
+// upgrade-eu.hismarttv.com
+// DISABLED BY DEFAULT
+// The following rules are documented but disabled.
+// Activating them may block firmware checks, component updates, or update downloads.
+// A practical workflow is to keep these rules active during normal use,
+// temporarily disable them when manually checking for an update,
+// and enable them again after the update check is complete.
+// upgrade-eu: European firmware-update check and delivery endpoint.
+
+// upgrade-em.hismarttv.com
+// upgrade-em: EM regional firmware-update check and delivery endpoint.
+
+// download-upgrade.hismarttv.com
+// download-upgrade: update-package download host.
+
+// upgrade-update.hismarttv.com
+// upgrade-update: inferred update coordination or API endpoint.
+
+// upgrade-launcher.hismarttv.com
+// upgrade-launcher: launcher-component update endpoint.
+
+// upgrade-backup.hismarttv.com
+// upgrade-backup: fallback or backup update endpoint.
+
+// download.hismarttv.com
+// download: broad download endpoint that may serve system files as well as other assets.
+
+// new-download.hismarttv.com
+// new-download: alternative or newer download endpoint.
+
+// ota-tv.vidaahub.com
+// ota-tv: global VIDAA OTA update API.
+
+// ota-tv-ru.vidaahub.com
+// ota-tv-ru: regional RU OTA endpoint.
+
+// ota-dl.vidaahub.com
+// ota-dl: VIDAA OTA package-download endpoint.
+
+// ============================================================================
+// GROUP 9 — CORE AUTHENTICATION / ACCOUNT / LICENSING
+// ============================================================================
+
+// auth-public.hismarttv.com
+// DISABLED BY DEFAULT
+// These endpoints may be used by VIDAA Account, token issuance, application
+// licensing, cloud profiles, or other authenticated platform services.
+// They remain in the file as optional rules but are disabled by default.
+// auth-public: public VIDAA authentication endpoint.
+
+// auth-account.hismarttv.com
+// auth-account: VIDAA Account authentication and management.
+
+// account.hismarttv.com
+// account: user profile and account services.
+
+// token.hismarttv.com
+// token: authentication-token issuance or refresh endpoint.
+
+// license.hismarttv.com
+// license: inferred application or service licensing endpoint.
+
+// vidaa-base-auth-eu.vidaahub.com
+// vidaa-base-auth-eu: base European authentication endpoint on vidaahub.com.
+
+// vidaa-base-auth-ru.vidaahub.com
+// vidaa-base-auth-ru: regional RU authentication endpoint on vidaahub.com.
+
+// ============================================================================
+// GROUP 10 — CORE HOME / LAUNCHER / LAYOUT SERVICES
+// ============================================================================
+
+// home-launcher.hismarttv.com
+// DISABLED BY DEFAULT
+// These endpoints may provide VIDAA Home structure, layout, application ordering,
+// icons, cards, launcher resources, and other core UI data.
+// Blocking them may clean the interface more aggressively, but can also cause:
+// - blank placeholders;
+// - delayed YouTube or Netflix icons;
+// - a partially empty Home screen;
+// - repeated loading;
+// - a 3–5 second delay while the launcher waits for a timeout or fallback.
+// home-launcher: main VIDAA Home backend.
+
+// cdn-home-launcher.hismarttv.com
+// cdn-home-launcher: CDN for VIDAA Home images and resources.
+
+// layout-launcher.hismarttv.com
+// layout-launcher: layout and placement data for Home elements.
+
+// default-cmp.hismarttv.com
+// default-cmp: inferred default launcher component or campaign configuration.
+
+// v2-app-launcher.hismarttv.com
+// v2-app-launcher: version 2 API for launcher application lists.
+
+// v2-api-channel-launcher.hismarttv.com
+// v2-api-channel-launcher: version 2 API for launcher channels and cards.
+
+// icon-launcher.hismarttv.com
+// icon-launcher: inferred source of launcher application icons.
+// This is a possible explanation for delayed YouTube and Netflix icons after startup.
+
+// pic-launcher.hismarttv.com
+// pic-launcher: inferred source of launcher artwork and image assets.
+// This is a possible explanation for blank placeholders during the first seconds after startup.
+
+// resource-launcher.hismarttv.com
+// resource-launcher: inferred general resource endpoint for Home and launcher assets.
+
+// ============================================================================
+// GROUP 11 — TIME / REGION / CONNECTIVITY
+// ============================================================================
+
+// synctime.hismarttv.com
+// DISABLED BY DEFAULT
+// These services may provide time synchronization, regional routing,
+// internet-connectivity checks, or backend selection.
+// They remain disabled because blocking them can affect the clock, TLS validation,
+// EPG data, regional applications, or service availability.
+// synctime: system-time synchronization.
+
+// tvgslb-ntp.hismarttv.com
+// tvgslb-ntp: inferred NTP or globally load-balanced time service.
+
+// ntp-jp.hismarttv.com
+// ntp-jp: Japanese regional NTP endpoint that may also be used as a fallback.
+
+// network-test.hismarttv.com
+// network-test: internet-connectivity test endpoint.
+
+// connectivity-check.hismarttv.com
+// connectivity-check: inferred captive-portal or internet-connectivity detection endpoint.
+
+// region.hismarttv.com
+// region: inferred regional identification and backend-selection service.
+
+// geo.hismarttv.com
+// geo: inferred IP-based geolocation or regional-routing service.
+
+// ============================================================================
+// GROUP 12 — DRM / MEDIA / CONTENT DELIVERY
+// ============================================================================
+
+// drm.hismarttv.com
+// DISABLED BY DEFAULT
+// These endpoints may support DRM, playback authorization, certificates,
+// content metadata, streaming manifests, or media delivery.
+// Blocking them may affect Netflix, VIDAA Channels, streaming applications,
+// HDR playback, Dolby Vision playback, or protected content.
+// drm: inferred DRM-related service.
+
+// widevine.hismarttv.com
+// widevine: inferred Widevine-related endpoint.
+
+// certificate.hismarttv.com
+// certificate: inferred certificate-distribution or trust-chain endpoint.
+
+// media.hismarttv.com
+// media: inferred general media service.
+
+// content.hismarttv.com
+// content: inferred content metadata or catalog service.
+
+// cdn.hismarttv.com
+// cdn: broad Hisense CDN rule; intentionally disabled because it is too general.
+
