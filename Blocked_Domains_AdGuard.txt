@@ -63,6 +63,12 @@
 !
 ! shop-launcher: inferred commercial or shopping section used by the launcher.
 ||shop-launcher.hismarttv.com^
+!
+! abtest-tv: A/B testing and remote feature-experiment endpoint for TV firmware and UI variants.
+||abtest-tv.vidaahub.com^
+!
+! bo.ads-privacy: advertising privacy, consent, and advertising-policy backend.
+||bo.ads-privacy.vidaahub.com^
 
 ! =====================================================================
 ! GROUP 2 — RECOMMENDATIONS / HOME FEEDS / CONTENT DISCOVERY
@@ -97,6 +103,9 @@
 !
 ! launcher-recommend: inferred launcher recommendation feed.
 ||launcher-recommend.hismarttv.com^
+!
+! detail-ui-eu: European UI metadata and detailed interface-content endpoint.
+||detail-ui-eu.vidaahub.com^
 
 ! =====================================================================
 ! GROUP 3 — TELEMETRY / LOGGING / ANALYTICS / DEVICE DETECTION
@@ -138,6 +147,9 @@
 !
 ! api.euro: legacy European Hisense API endpoint retained from the original tested list.
 ||api.euro.hismarttv.com^
+!
+! api.eu: legacy European Hisense / VIDAA platform API endpoint.
+||api.eu.hismarttv.com^
 !
 ! metrics: inferred usage and performance metrics endpoint.
 ||metrics.hismarttv.com^
@@ -458,6 +470,26 @@
 !
 ! cdn: broad Hisense CDN rule; intentionally disabled because it is too general.
 ! ||cdn.hismarttv.com^
+
+! =====================================================================
+! GROUP 13 — ROOT-DOMAIN WILDCARDS
+! DISABLED BY DEFAULT — VERY AGGRESSIVE
+! =====================================================================
+!
+! These rules block complete cloud-service namespaces.
+! They are retained only as manual, aggressive options.
+!
+! Activating them may disable Home, the application store, updates,
+! recommendations, authentication, icons, and most cloud functionality.
+!
+! Block every hostname under hismarttv.com.
+! ||hismarttv.com^
+!
+! Block every hostname under vidaahub.com.
+! ||vidaahub.com^
+!
+! Block every hostname under vidaa.com.
+! ||vidaa.com^
 
 ! =====================================================================
 ! END OF LIST
