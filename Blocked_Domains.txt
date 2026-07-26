@@ -1,34 +1,254 @@
+// Hisense / VIDAA Active Domain Reference
+// Plain domain list. No AdGuard syntax.
+// Contains only domains that are active in the extended annotated blocklist.
+
+// ============================================================================
+// GROUP 1 — ADVERTISING / IMPRESSIONS / PROMOTIONAL ASSETS
+// ============================================================================
+
+ad-cmp.hismarttv.com
+// This group blocks the most obvious advertising endpoints, campaign assets,
+// impression reporting, shopping cards, and other promotional material.
+// It normally produces the most visible cleanup of the VIDAA home screen.
+// A possible side effect is delayed application artwork after startup:
+// VIDAA may first render local placeholders, wait for a blocked remote resource,
+// and load an alternative cached or fallback icon several seconds later.
+// ad-cmp: inferred advertising or campaign-management component.
+
+ad-imp.hismarttv.com
+// ad-imp: inferred advertising-impression reporting endpoint.
+
+imp-cmp.hismarttv.com
+// imp-cmp: inferred impression or campaign reporting component.
+
+mz-impr.hismarttv.com
+// mz-impr: inferred impression-tracking endpoint; the "mz" prefix is undocumented.
+
+ad-download.hismarttv.com
+// ad-download: inferred download host for advertising images, video, or campaign assets.
+
+ad-download-mam.hismarttv.com
+// ad-download-mam: inferred advertising asset delivery through a media asset management service.
+
+recmd-cmp.hismarttv.com
+// recmd-cmp: inferred recommendation or promotional campaign component.
+
+recmd-thirdcmp.hismarttv.com
+// recmd-thirdcmp: inferred third-party recommendation or campaign component.
+
+carousel-channel.hismarttv.com
+// carousel-channel: inferred source of promotional channel carousels and home-screen content rows.
+
+picture-shoppingguider.hismarttv.com
+// picture-shoppingguider: inferred image host for shopping-guide or commercial cards.
+
+api-shoppingguider.hismarttv.com
+// api-shoppingguider: inferred API for shopping-guide data and commercial recommendations.
+
+api-shoppingguider-dcdn.hismarttv.com
+// api-shoppingguider-dcdn: inferred CDN endpoint for shopping-guide data and images.
+
+shop-launcher.hismarttv.com
+// shop-launcher: inferred commercial or shopping section used by the launcher.
+
+// ============================================================================
+// GROUP 2 — RECOMMENDATIONS / HOME FEEDS / CONTENT DISCOVERY
+// ============================================================================
+
+recommender-launcher.hismarttv.com
+// This group blocks remote recommendation feeds and discovery services used by VIDAA Home.
+// It may remove recommendation rows, promoted content, and content suggestions.
+// A possible side effect is an empty placeholder or a short delay while the launcher
+// waits for a blocked request to time out before using cached or fallback data.
+// recommender-launcher: inferred central recommendation service for the VIDAA launcher.
+
+recmd-launcher.hismarttv.com
+// recmd-launcher: inferred abbreviated recommendation service used by the launcher.
+
+recommendation-launcher.hismarttv.com
+// recommendation-launcher: inferred alternative recommendation hostname for the launcher.
+
+content-recommendation.hismarttv.com
+// content-recommendation: inferred recommendation service for films, channels, and applications.
+
+api-recommendation.hismarttv.com
+// api-recommendation: inferred general recommendation API.
+
+api-recommendation-eu.hismarttv.com
+// api-recommendation-eu: inferred European regional recommendation API.
+
+api-recommendation-em.hismarttv.com
+// api-recommendation-em: inferred recommendation API for the EM regional service group.
+
+launcher-recommend.hismarttv.com
+// launcher-recommend: inferred launcher recommendation feed.
+
+// ============================================================================
+// GROUP 3 — TELEMETRY / LOGGING / ANALYTICS / DEVICE DETECTION
+// ============================================================================
+
+api-logsdk.hismarttv.com
+// This group reduces uploads of logs, diagnostics, usage metrics, network state,
+// device events, and inferred location or region information.
+// When these domains are blocked, a TV may retain events locally and retry them later.
+// Therefore, temporarily disabling the list may allow queued telemetry to be uploaded.
+// The exact queueing behavior is firmware-dependent and is not publicly documented.
+// api-logsdk: inferred log and event collection endpoint used by an embedded logging SDK.
+
+api-gps-eu.hismarttv.com
+// api-gps-eu: inferred European geo/global platform service; "GPS" does not necessarily mean satellite positioning.
+
 api-gps-em.hismarttv.com
+// api-gps-em: inferred geo/global platform service for the EM regional service group.
+
 api-gps-na.hismarttv.com
-api-launcher-em.hismarttv.com
-api-launcher-na.hismarttv.com
-api.eu.hismarttv.com
-api.euro.hismarttv.com
-api.us.hismarttv.com
-auth-em.hismarttv.com
-auth-launcher-em.hismarttv.com
-auth-launcher-na.hismarttv.com
-auth-na.hismarttv.com
-msg-em.hismarttv.com
-msg-na.hismarttv.com
+// api-gps-na: North American geo/global platform endpoint retained from the original tested list.
+
+detect.hismarttv.com
+// detect: inferred device, network, region, or service-availability detection endpoint.
+
+cudetect.hismarttv.com
+// cudetect: inferred customer or device detection endpoint; exact purpose is undocumented.
+
+api-cloudfalcon.hismarttv.com
+// api-cloudfalcon: inferred cloud diagnostics, health monitoring, or telemetry backend.
+
 unified-ter-na.hismarttv.com
-abtest-tv.vidaahub.com
-bo.ads-privacy.vidaahub.com
-detail-ui-eu.vidaahub.com
-device-ecom.vidaahub.com
-dvcstatus-dataretrv.vidaahub.com
-exc-jrnl-eu.vidaahub.com
-geo-bas-eu.vidaahub.com
-home-ui-eu.vidaahub.com
-hub-msg.vidaahub.com
-img.vidaahub.com
-iot-voice-eu.vidaahub.com
-layout-ui-eu.vidaahub.com
-params-msg-eu.vidaahub.com
-policy-jrnl-eu.vidaahub.com
-recommend-ui-eu.vidaahub.com
-sttc-az-recommend-ui.vidaahub.com
-ter-jrnl-eu.vidaahub.com
-tvmodules-vidaa.vidaahub.com
-file-ul.vidaahub.com
-member-ui-eu.vidaahub.com
+// unified-ter-na: legacy endpoint historically associated with telemetry or event reporting in the NA region.
+
+api.us.hismarttv.com
+// api.us: legacy United States Hisense API endpoint retained from the original tested list.
+
+api.euro.hismarttv.com
+// api.euro: legacy European Hisense API endpoint retained from the original tested list.
+
+metrics.hismarttv.com
+// metrics: inferred usage and performance metrics endpoint.
+
+telemetry.hismarttv.com
+// telemetry: inferred general telemetry endpoint.
+
+analytics.hismarttv.com
+// analytics: inferred analytics endpoint for user and system events.
+
+logservice.hismarttv.com
+// logservice: inferred centralized VIDAA logging service.
+
+event-report.hismarttv.com
+// event-report: inferred reporting endpoint for interface, application, or playback events.
+
+// ============================================================================
+// GROUP 4 — MESSAGE / PUSH / NOTIFICATION SERVICES
+// ============================================================================
+
+msg-eu.hismarttv.com
+// This group blocks message and push infrastructure.
+// It may suppress promotional notifications and server-side messages.
+// It can also affect legitimate system notices, remote service events,
+// update notifications, or background synchronization.
+// msg-eu: European message or push endpoint.
+
+msg-em.hismarttv.com
+// msg-em: EM regional message or push endpoint retained from the original tested list.
+
+msg-na.hismarttv.com
+// msg-na: North American message or push endpoint retained from the original tested list.
+
+msg-tv.hismarttv.com
+// msg-tv: general TV messaging service.
+
+msg-cmp.hismarttv.com
+// msg-cmp: inferred messaging service associated with campaign or component infrastructure.
+
+push.hismarttv.com
+// push: inferred general push endpoint.
+
+notification.hismarttv.com
+// notification: inferred VIDAA notification service.
+
+// ============================================================================
+// GROUP 5 — VOICE / ASSISTANT SERVICES
+// ============================================================================
+
+voiceservice-eu.hismarttv.com
+// This group blocks cloud-based voice functions and VIDAA Assistant services.
+// It is suitable when voice input, VIDAA Voice, Alexa integration, and cloud assistant
+// features are not used.
+// Standard remote-control buttons should normally remain functional.
+// voiceservice-eu: European voice-recognition or voice-processing backend.
+
+voiceservice-em.hismarttv.com
+// voiceservice-em: EM regional voice-service backend.
+
+auth-voiceservice-eu.hismarttv.com
+// auth-voiceservice-eu: authentication endpoint for the European voice service.
+
+auth-voiceservice-em.hismarttv.com
+// auth-voiceservice-em: authentication endpoint for the EM regional voice service.
+
+api-vidaaasst.hismarttv.com
+// api-vidaaasst: VIDAA Assistant API.
+
+assistant.hismarttv.com
+// assistant: inferred general assistant backend.
+
+// ============================================================================
+// GROUP 6 — APP STORE / APPLICATION CATALOG / OPTIONAL CLOUD CONTENT
+// ============================================================================
+
+app-appstore.hismarttv.com
+// This group blocks VIDAA application-store endpoints, catalog metadata,
+// and application artwork.
+// Existing applications may continue to work, but installation, updates,
+// catalog browsing, and application icons may fail or become delayed.
+// app-appstore: inferred VIDAA Store application catalog or API.
+
+pic-appstore.hismarttv.com
+// pic-appstore: application artwork and icons used by VIDAA Store.
+
+hiapp.hismarttv.com
+// hiapp: inferred HiApp or VIDAA application catalog backend.
+
+appstore-eu.hismarttv.com
+// appstore-eu: European application-store endpoint.
+
+appstore-em.hismarttv.com
+// appstore-em: EM regional application-store endpoint.
+
+appstore-na.hismarttv.com
+// appstore-na: North American application-store endpoint.
+
+// ============================================================================
+// GROUP 7 — OPTIONAL REGIONAL / LEGACY ENDPOINTS
+// ============================================================================
+
+auth-em.hismarttv.com
+// This group contains older regional endpoints retained from the original,
+// working blocklist used on an earlier Hisense / VIDAA television.
+// These rules remain active because they previously produced the intended cleanup.
+// On newer firmware, their exact role may differ or they may no longer be queried.
+// auth-em: EM regional authentication endpoint; blocking may disable some account services.
+
+api-launcher-em.hismarttv.com
+// api-launcher-em: EM regional launcher API and possible source of VIDAA Home content.
+
+auth-launcher-em.hismarttv.com
+// auth-launcher-em: authentication endpoint for the EM regional launcher.
+
+auth-na.hismarttv.com
+// auth-na: North American authentication endpoint retained from the original tested list.
+
+api-launcher-na.hismarttv.com
+// api-launcher-na: North American launcher API retained from the original tested list.
+
+auth-launcher-na.hismarttv.com
+// auth-launcher-na: authentication endpoint for the North American launcher.
+
+auth-eu.hismarttv.com
+// auth-eu: European VIDAA authentication endpoint.
+
+api-launcher-eu.hismarttv.com
+// api-launcher-eu: European VIDAA launcher API.
+
+auth-launcher-eu.hismarttv.com
+// auth-launcher-eu: European launcher authentication endpoint.
