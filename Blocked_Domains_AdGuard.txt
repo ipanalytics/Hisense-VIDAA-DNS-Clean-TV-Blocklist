@@ -269,6 +269,8 @@
 ! iot-voice-eu: European IoT and cloud voice-service backend.
 ||iot-voice-eu.vidaahub.com^
 
+||vidaa-voice-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 6 — APP STORE / APPLICATION CATALOG / OPTIONAL CLOUD CONTENT
 ! =====================================================================
