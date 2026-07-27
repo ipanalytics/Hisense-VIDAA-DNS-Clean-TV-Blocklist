@@ -83,6 +83,8 @@
 ! acr.unruly.co: third-party automated content recognition and advertising-data endpoint associated with Unruly / Nexxen.
 ||acr.unruly.co^
 
+||recommend-ui-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 2 — RECOMMENDATIONS / HOME FEEDS / CONTENT DISCOVERY
 ! =====================================================================
