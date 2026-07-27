@@ -13,6 +13,11 @@
 ! AdGuard Home DNS query logs, and observed VIDAA behavior.
 ! Where a purpose is not confirmed, the description explicitly says that it is inferred.
 !
+! 2026 REAL-DEVICE UPDATE:
+! The additional active rules in this edition were observed on a current-generation
+! Hisense / VIDAA television and were tested together without breaking the owner's
+! intended use case. They remain active rather than merely documented.
+!
 ! =====================================================================
 ! GROUP 1 — ADVERTISING / IMPRESSIONS / PROMOTIONAL ASSETS
 ! =====================================================================
@@ -70,6 +75,13 @@
 ! bo.ads-privacy: advertising privacy, consent, and advertising-policy backend.
 ||bo.ads-privacy.vidaahub.com^
 
+!
+! device-ecom: inferred device-linked e-commerce, shopping, or commercial-content backend.
+||device-ecom.vidaahub.com^
+!
+! acr.unruly.co: third-party automated content recognition and advertising-data endpoint associated with Unruly / Nexxen infrastructure.
+||acr.unruly.co^
+
 ! =====================================================================
 ! GROUP 2 — RECOMMENDATIONS / HOME FEEDS / CONTENT DISCOVERY
 ! =====================================================================
@@ -106,6 +118,13 @@
 !
 ! detail-ui-eu: European UI metadata and detailed interface-content endpoint.
 ||detail-ui-eu.vidaahub.com^
+
+!
+! sttc-az-recommend-ui: static assets for the recommendation UI, likely delivered through Azure-backed infrastructure.
+||sttc-az-recommend-ui.vidaahub.com^
+!
+! base-ai: shared VIDAA AI backend, likely supporting recommendations, personalization, ranking, or automated interface features.
+||base-ai.vidaahub.com^
 
 ! =====================================================================
 ! GROUP 3 — TELEMETRY / LOGGING / ANALYTICS / DEVICE DETECTION
@@ -166,6 +185,16 @@
 ! event-report: inferred reporting endpoint for interface, application, or playback events.
 ||event-report.hismarttv.com^
 
+!
+! ter-jrnl-eu: inferred European telemetry-event journal upload endpoint.
+||ter-jrnl-eu.vidaahub.com^
+!
+! exc-jrnl-eu: inferred European exception, crash, or diagnostic journal upload endpoint.
+||exc-jrnl-eu.vidaahub.com^
+!
+! dvcstatus-dataretrv: inferred device-status and device-data retrieval service.
+||dvcstatus-dataretrv.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 4 — MESSAGE / PUSH / NOTIFICATION SERVICES
 ! =====================================================================
@@ -197,6 +226,13 @@
 ! notification: inferred VIDAA notification service.
 ||notification.hismarttv.com^
 
+!
+! hub-v2-msg: version 2 VIDAA messaging hub used for server-side messages, push events, or background communication.
+||hub-v2-msg.vidaahub.com^
+!
+! params-msg-eu: European messaging-parameter and messaging-configuration endpoint.
+||params-msg-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 5 — VOICE / ASSISTANT SERVICES
 ! =====================================================================
@@ -225,6 +261,13 @@
 ! assistant: inferred general assistant backend.
 ||assistant.hismarttv.com^
 
+!
+! sttc-iot: static resources or configuration associated with VIDAA IoT and smart-home features.
+||sttc-iot.vidaahub.com^
+!
+! iot-voice-eu: European IoT and voice-service backend.
+||iot-voice-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 6 — APP STORE / APPLICATION CATALOG / OPTIONAL CLOUD CONTENT
 ! =====================================================================
@@ -252,6 +295,10 @@
 !
 ! appstore-na: North American application-store endpoint.
 ||appstore-na.hismarttv.com^
+
+!
+! api.accuweather.com: AccuWeather API used by weather widgets or weather-related Home content.
+||api.accuweather.com^
 
 ! =====================================================================
 ! GROUP 7 — OPTIONAL REGIONAL / LEGACY ENDPOINTS
@@ -337,7 +384,7 @@
 
 ! =====================================================================
 ! GROUP 9 — CORE AUTHENTICATION / ACCOUNT / LICENSING
-! DISABLED BY DEFAULT
+! MIXED: OBSERVED 2026 RULES ACTIVE; OTHER OPTIONAL RULES DISABLED
 ! =====================================================================
 !
 ! These endpoints may be used by VIDAA Account, token issuance, application
@@ -360,15 +407,15 @@
 ! license: inferred application or service licensing endpoint.
 ! ||license.hismarttv.com^
 !
-! vidaa-base-auth-eu: base European authentication endpoint on vidaahub.com.
-! ||vidaa-base-auth-eu.vidaahub.com^
+! vidaa-base-auth-eu: base European authentication endpoint on vidaahub.com; observed and tested as blocked on the 2026 device.
+||vidaa-base-auth-eu.vidaahub.com^
 !
 ! vidaa-base-auth-ru: regional RU authentication endpoint on vidaahub.com.
 ! ||vidaa-base-auth-ru.vidaahub.com^
 
 ! =====================================================================
 ! GROUP 10 — CORE HOME / LAUNCHER / LAYOUT SERVICES
-! DISABLED BY DEFAULT
+! MIXED: OBSERVED 2026 RULES ACTIVE; OTHER OPTIONAL RULES DISABLED
 ! =====================================================================
 !
 ! These endpoints may provide VIDAA Home structure, layout, application ordering,
@@ -410,9 +457,28 @@
 ! resource-launcher: inferred general resource endpoint for Home and launcher assets.
 ! ||resource-launcher.hismarttv.com^
 
+!
+! tvmodules-vidaa: module manifests, packages, or remotely delivered VIDAA TV components.
+||tvmodules-vidaa.vidaahub.com^
+!
+! param-ui-eu: European UI parameters and remote interface configuration.
+||param-ui-eu.vidaahub.com^
+!
+! layout-ui-eu: European Home/UI layout definition endpoint.
+||layout-ui-eu.vidaahub.com^
+!
+! static-ui: shared static UI assets such as images, scripts, styles, or interface resources.
+||static-ui.vidaahub.com^
+!
+! home-ui-eu: European core Home-screen UI service.
+||home-ui-eu.vidaahub.com^
+!
+! search-ui-eu: European search-interface backend and search UI configuration.
+||search-ui-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 11 — TIME / REGION / CONNECTIVITY
-! DISABLED BY DEFAULT
+! MIXED: OBSERVED 2026 RULES ACTIVE; OTHER OPTIONAL RULES DISABLED
 ! =====================================================================
 !
 ! These services may provide time synchronization, regional routing,
@@ -442,9 +508,19 @@
 ! geo: inferred IP-based geolocation or regional-routing service.
 ! ||geo.hismarttv.com^
 
+!
+! domain.vidaahub.com: inferred service-discovery, domain-routing, or backend-selection endpoint.
+||domain.vidaahub.com^
+!
+! time-bas-eu: inferred European base-time or time-synchronization service.
+||time-bas-eu.vidaahub.com^
+!
+! geo-bas-eu: inferred European geolocation, regional selection, or geo-routing service.
+||geo-bas-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 12 — DRM / MEDIA / CONTENT DELIVERY
-! DISABLED BY DEFAULT
+! MIXED: OBSERVED 2026 RULES ACTIVE; OTHER OPTIONAL RULES DISABLED
 ! =====================================================================
 !
 ! These endpoints may support DRM, playback authorization, certificates,
@@ -470,6 +546,13 @@
 !
 ! cdn: broad Hisense CDN rule; intentionally disabled because it is too general.
 ! ||cdn.hismarttv.com^
+
+!
+! m.media-amazon.com: broad Amazon media and image CDN used by Amazon content and potentially by embedded promotional assets.
+||m.media-amazon.com^
+!
+! hisense-0ba453d1.prod.partner.netflix.net: Hisense-specific Netflix partner integration endpoint for provisioning, certification, activation, metadata, or playback integration.
+||hisense-0ba453d1.prod.partner.netflix.net^
 
 ! =====================================================================
 ! GROUP 13 — ROOT-DOMAIN WILDCARDS
