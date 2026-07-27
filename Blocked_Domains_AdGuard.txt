@@ -13,10 +13,11 @@
 ! AdGuard Home DNS query logs, and observed VIDAA behavior.
 ! Where a purpose is not confirmed, the description explicitly says that it is inferred.
 !
-! 2026 REAL-DEVICE UPDATE:
-! The additional active rules in this edition were observed on a current-generation
-! Hisense / VIDAA television and were tested together without breaking the owner's
-! intended use case. They remain active rather than merely documented.
+! 2026 REAL-DEVICE TESTED UPDATE:
+! The additional rules marked as observed below were captured from a current-generation
+! Hisense / VIDAA television and are intentionally ACTIVE. Comment lines describe them,
+! but the actual blocking lines do NOT begin with "!".
+
 !
 ! =====================================================================
 ! GROUP 1 — ADVERTISING / IMPRESSIONS / PROMOTIONAL ASSETS
@@ -79,7 +80,7 @@
 ! device-ecom: inferred device-linked e-commerce, shopping, or commercial-content backend.
 ||device-ecom.vidaahub.com^
 !
-! acr.unruly.co: third-party automated content recognition and advertising-data endpoint associated with Unruly / Nexxen infrastructure.
+! acr.unruly.co: third-party automated content recognition and advertising-data endpoint associated with Unruly / Nexxen.
 ||acr.unruly.co^
 
 ! =====================================================================
@@ -120,10 +121,10 @@
 ||detail-ui-eu.vidaahub.com^
 
 !
-! sttc-az-recommend-ui: static assets for the recommendation UI, likely delivered through Azure-backed infrastructure.
+! sttc-az-recommend-ui: static assets for VIDAA recommendation cards and recommendation UI.
 ||sttc-az-recommend-ui.vidaahub.com^
 !
-! base-ai: shared VIDAA AI backend, likely supporting recommendations, personalization, ranking, or automated interface features.
+! base-ai: shared VIDAA AI backend, likely used for recommendations, ranking, personalization, or automated UI functions.
 ||base-ai.vidaahub.com^
 
 ! =====================================================================
@@ -186,10 +187,10 @@
 ||event-report.hismarttv.com^
 
 !
-! ter-jrnl-eu: inferred European telemetry-event journal upload endpoint.
+! ter-jrnl-eu: European telemetry-event journal upload endpoint.
 ||ter-jrnl-eu.vidaahub.com^
 !
-! exc-jrnl-eu: inferred European exception, crash, or diagnostic journal upload endpoint.
+! exc-jrnl-eu: European exception, crash, or diagnostic journal upload endpoint.
 ||exc-jrnl-eu.vidaahub.com^
 !
 ! dvcstatus-dataretrv: inferred device-status and device-data retrieval service.
@@ -227,10 +228,10 @@
 ||notification.hismarttv.com^
 
 !
-! hub-v2-msg: version 2 VIDAA messaging hub used for server-side messages, push events, or background communication.
+! hub-v2-msg: VIDAA Messaging Hub v2 used for server-side messages, push events, or background communication.
 ||hub-v2-msg.vidaahub.com^
 !
-! params-msg-eu: European messaging-parameter and messaging-configuration endpoint.
+! params-msg-eu: European messaging parameters and remote messaging configuration.
 ||params-msg-eu.vidaahub.com^
 
 ! =====================================================================
@@ -262,10 +263,10 @@
 ||assistant.hismarttv.com^
 
 !
-! sttc-iot: static resources or configuration associated with VIDAA IoT and smart-home features.
+! sttc-iot: static resources and configuration associated with VIDAA IoT or smart-home functions.
 ||sttc-iot.vidaahub.com^
 !
-! iot-voice-eu: European IoT and voice-service backend.
+! iot-voice-eu: European IoT and cloud voice-service backend.
 ||iot-voice-eu.vidaahub.com^
 
 ! =====================================================================
@@ -407,7 +408,7 @@
 ! license: inferred application or service licensing endpoint.
 ! ||license.hismarttv.com^
 !
-! vidaa-base-auth-eu: base European authentication endpoint on vidaahub.com; observed and tested as blocked on the 2026 device.
+! vidaa-base-auth-eu: base European VIDAA authentication endpoint; intentionally blocked in the tested 2026 setup.
 ||vidaa-base-auth-eu.vidaahub.com^
 !
 ! vidaa-base-auth-ru: regional RU authentication endpoint on vidaahub.com.
@@ -464,16 +465,16 @@
 ! param-ui-eu: European UI parameters and remote interface configuration.
 ||param-ui-eu.vidaahub.com^
 !
-! layout-ui-eu: European Home/UI layout definition endpoint.
+! layout-ui-eu: European Home-screen and interface layout definitions.
 ||layout-ui-eu.vidaahub.com^
 !
-! static-ui: shared static UI assets such as images, scripts, styles, or interface resources.
+! static-ui: shared static UI assets such as images, scripts, styles, and interface resources.
 ||static-ui.vidaahub.com^
 !
-! home-ui-eu: European core Home-screen UI service.
+! home-ui-eu: European core VIDAA Home-screen service.
 ||home-ui-eu.vidaahub.com^
 !
-! search-ui-eu: European search-interface backend and search UI configuration.
+! search-ui-eu: European VIDAA search-interface backend and search UI configuration.
 ||search-ui-eu.vidaahub.com^
 
 ! =====================================================================
@@ -509,13 +510,13 @@
 ! ||geo.hismarttv.com^
 
 !
-! domain.vidaahub.com: inferred service-discovery, domain-routing, or backend-selection endpoint.
+! domain.vidaahub.com: inferred VIDAA service-discovery, domain-routing, or backend-selection endpoint.
 ||domain.vidaahub.com^
 !
 ! time-bas-eu: inferred European base-time or time-synchronization service.
 ||time-bas-eu.vidaahub.com^
 !
-! geo-bas-eu: inferred European geolocation, regional selection, or geo-routing service.
+! geo-bas-eu: inferred European geolocation, region-selection, or geo-routing service.
 ||geo-bas-eu.vidaahub.com^
 
 ! =====================================================================
@@ -548,7 +549,7 @@
 ! ||cdn.hismarttv.com^
 
 !
-! m.media-amazon.com: broad Amazon media and image CDN used by Amazon content and potentially by embedded promotional assets.
+! m.media-amazon.com: Amazon media and image CDN used by Amazon content and potentially embedded promotional assets.
 ||m.media-amazon.com^
 !
 ! hisense-0ba453d1.prod.partner.netflix.net: Hisense-specific Netflix partner integration endpoint for provisioning, certification, activation, metadata, or playback integration.
