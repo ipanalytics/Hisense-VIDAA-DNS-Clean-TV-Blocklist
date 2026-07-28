@@ -586,3 +586,4 @@
 
 ||policy-jrnl-eu.vidaahub.com^
 ||appstore-vidaa.vidaahub.com^
+||upgrade-plc-tv.vidaahub.com^
