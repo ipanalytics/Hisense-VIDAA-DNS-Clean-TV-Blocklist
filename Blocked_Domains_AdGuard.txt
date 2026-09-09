@@ -305,6 +305,8 @@
 ! api.accuweather.com: AccuWeather API used by weather widgets or weather-related Home content.
 ||api.accuweather.com^
 
+||bas-eu.vidaahub.com^
+
 ! =====================================================================
 ! GROUP 7 — OPTIONAL REGIONAL / LEGACY ENDPOINTS
 ! =====================================================================
